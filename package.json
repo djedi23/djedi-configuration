@@ -1,0 +1,23 @@
+{
+  "name": "@djedi/configuration",
+  "version": "0.0.7",
+  "main": "build/index.js",
+  "types": "src/index.d.ts",
+  "repository": "https://github.com/djedi23/djedi-configuration.git",
+  "author": "Mose Valvassori <moise.valvassori@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node build/index.js",
+    "prepare": "yarn build",
+    "prettier": "prettier --parser typescript --single-quote --print-width 120 --trailing-comma es5 --write **/*.ts"
+  },
+  "devDependencies": {
+    "@types/nconf": "^0.10.0",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "nconf": "^0.10.0"
+  }
+}
