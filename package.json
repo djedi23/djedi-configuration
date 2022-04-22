@@ -18,6 +18,6 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "nconf": "^0.10.0"
+    "nconf": "^0.11.4"
   }
 }
