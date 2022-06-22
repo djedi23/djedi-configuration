@@ -1,12 +1,11 @@
 // Type definitions for nconf 0.10
 // Project: https://github.com/flatiron/nconf
-// Definitions by: Jeff Goddard <https://github.com/jedigo>, 
+// Definitions by: Jeff Goddard <https://github.com/jedigo>,
 //                 Jean-Martin Thibault <https://github.com/jmthibault>
 //                 Dave Houston <https://github.com/ew73>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 // Imported from: https://github.com/soywiz/typescript-node-definitions/nconf.d.ts
-
 
 export declare var version: number;
 export declare var stores: any;
@@ -36,7 +35,7 @@ export declare function defaults(options?: IOptions): Provider;
 export declare function init(options?: IOptions): void;
 export declare function overrides(options?: IOptions): Provider;
 export declare function remove(name: string): void;
-export declare function required(keys: string[]): Provider; 
+export declare function required(keys: string[]): Provider;
 export declare function create(name: string, options: IOptions): IStore;
 
 export declare function key(...values: any[]): string;
@@ -45,79 +44,79 @@ export declare function loadFiles(files: any, callback?: ICallbackFunction): voi
 export declare function loadFilesSync(files: any, callback?: ICallbackFunction): void;
 
 export interface IFormats {
-    json: IFormat;
-    ini: IFormat;
+  json: IFormat;
+  ini: IFormat;
 }
 export declare var formats: IFormats;
 
 export interface IFormat {
-    stringify: (obj: any, replacer: any, spacing?: any) => string;
-    parse: (str: string) => any;
+  stringify: (obj: any, replacer: any, spacing?: any) => string;
+  parse: (str: string) => any;
 }
 
 export interface IOptions {
-    [index: string]: any;
+  [index: string]: any;
 }
 
 export interface ISecureFileOptions {
-    secret: string;
-    alg?: string;
+  secret: string;
+  alg?: string;
 }
 
 export interface IFileOptions {
-    type?: string;
-    file?: string;
-    dir?: string;
-    search?: boolean;
-    format?: IFormat;
-    json_spacing?: number;
-    secure?: ISecureFileOptions;
+  type?: string;
+  file?: string;
+  dir?: string;
+  search?: boolean;
+  format?: IFormat;
+  json_spacing?: number;
+  secure?: ISecureFileOptions;
 }
 
 export interface ICallbackFunction {
-    (err: Error): void;
+  (err: Error): void;
 }
 
 export declare class Provider {
-    constructor(options?: IOptions);
+  constructor(options?: IOptions);
 
-    stores: any;
-    sources: any[];
+  stores: any;
+  sources: any[];
 
-    clear(key: string, callback?: ICallbackFunction): any;
-    get(key?: string, callback?: ICallbackFunction): any;
-    merge(key: string, value: any, callback?: ICallbackFunction): any;
-    set(key: string, value: any, callback?: ICallbackFunction): any;
-    reset(callback?: ICallbackFunction): any;
-    any(keys: string[], callback?: ICallbackFunction): any;
+  clear(key: string, callback?: ICallbackFunction): any;
+  get(key?: string, callback?: ICallbackFunction): any;
+  merge(key: string, value: any, callback?: ICallbackFunction): any;
+  set(key: string, value: any, callback?: ICallbackFunction): any;
+  reset(callback?: ICallbackFunction): any;
+  any(keys: string[], callback?: ICallbackFunction): any;
 
-    load(callback?: ICallbackFunction): any;
-    mergeSources(data: any): void;
-    loadSources(): any;
-    save(value: any, callback?: ICallbackFunction): any;
+  load(callback?: ICallbackFunction): any;
+  mergeSources(data: any): void;
+  loadSources(): any;
+  save(value: any, callback?: ICallbackFunction): any;
 
-    add(name: string, options?: IOptions): Provider;
-    argv(options?: IOptions): Provider;
-    env(options?: IOptions): Provider;
-    env(separator: string): Provider;
-    file(name: string, options?: IFileOptions): Provider;
-    file(name: string, filename: string): Provider;
-    file(options: IFileOptions): Provider;
-    use(name: string, options?: IOptions): Provider;
+  add(name: string, options?: IOptions): Provider;
+  argv(options?: IOptions): Provider;
+  env(options?: IOptions): Provider;
+  env(separator: string): Provider;
+  file(name: string, options?: IFileOptions): Provider;
+  file(name: string, filename: string): Provider;
+  file(options: IFileOptions): Provider;
+  use(name: string, options?: IOptions): Provider;
 
-    defaults(options?: IOptions): Provider;
-    init(options?: IOptions): void;
-    overrides(options?: IOptions): Provider;
-    remove(name: string): void;
-    required(keys: string[]): Provider;
-    create(name: string, options: IOptions): IStore;
+  defaults(options?: IOptions): Provider;
+  init(options?: IOptions): void;
+  overrides(options?: IOptions): Provider;
+  remove(name: string): void;
+  required(keys: string[]): Provider;
+  create(name: string, options: IOptions): IStore;
 }
 
 export interface IStore {
-    type: string;
-    get(key: string): any;
-    set(key: string, value: any): boolean;
-    clear(key: string): boolean;
-    merge(key: string, value: any): boolean;
-    reset(callback?: ICallbackFunction): boolean;
+  type: string;
+  get(key: string): any;
+  set(key: string, value: any): boolean;
+  clear(key: string): boolean;
+  merge(key: string, value: any): boolean;
+  reset(callback?: ICallbackFunction): boolean;
 }

@@ -10,14 +10,14 @@
     "build": "tsc -p .",
     "start": "node build/index.js",
     "prepare": "yarn build",
-    "prettier": "prettier --parser typescript --single-quote --print-width 120 --trailing-comma es5 --write **/*.ts"
+    "prettier": "prettier --write **/*.ts"
   },
   "devDependencies": {
     "@types/nconf": "^0.10.0",
-    "prettier": "^1.16.4",
-    "typescript": "^3.3.3333"
+    "prettier": "^2.0.5",
+    "typescript": "^4.0.2"
   },
   "dependencies": {
-    "nconf": "^0.10.0"
+    "nconf": "^0.12.0"
   }
 }
